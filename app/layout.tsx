@@ -1,19 +1,15 @@
-import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+"use client";
+
 import "./globals.css";
+import { Rubik } from "next/font/google";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "DIKS",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -22,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.variable}`}>{children}</body>
+      <body className={`${rubik.variable}`}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </body>
     </html>
   );
 }

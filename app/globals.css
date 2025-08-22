@@ -1,7 +1,8 @@
 :root {
+  --error: #dc2626;
+  --accent: #105dfd;
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #105dfd;
   --accent-hover: #105dfd99;
 }
 

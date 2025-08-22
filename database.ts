@@ -2,7 +2,7 @@
 
 import { Budget, User } from "@/types";
 
-const LOCAL_STORAGE_KEY = "budgetData";
+const LOCAL_STORAGE_KEY = "database";
 
 type Database = {
   users: User[];
@@ -20,14 +20,14 @@ export function readDatabase(): Database {
     budgets: [
       {
         id: "y2025",
-        end: new Date("2025-12-31"),
-        start: new Date("2025-01-01"),
+        end: "2025-12-31T23:59:59.999Z",
+        start: "2025-01-01T00:00:00.000Z",
         amount: 20000,
       },
       {
         id: "summer",
-        end: new Date("2025-08-31"),
-        start: new Date("2025-06-01"),
+        end: "2025-08-31T23:59:59.999Z",
+        start: "2025-06-01T00:00:00.000Z",
         amount: 10000,
       },
     ],
@@ -35,12 +35,12 @@ export function readDatabase(): Database {
       {
         id: "u1",
         name: "A. Feather",
-        joined: new Date("2025-01-01"),
+        joined: "2025-01-01T00:00:00.000Z",
       },
       {
         id: "u2",
         name: "B. Quack",
-        joined: new Date("2025-01-15"),
+        joined: "2025-01-15T00:00:00.000Z",
       },
     ],
   };
