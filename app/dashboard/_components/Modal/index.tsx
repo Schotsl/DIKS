@@ -12,7 +12,10 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
 
   return (
     <div className={styles.modal} onClick={onClose}>
-      <div className={styles.modal__content}>
+      <div
+        className={styles.modal__content}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div>
           <h2>Transaction</h2>
           <h1>Add new transaction</h1>
