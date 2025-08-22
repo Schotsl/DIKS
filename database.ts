@@ -8,6 +8,9 @@ type Database = {
 };
 
 export function readDatabase(): Database {
+  // Since everything is client side we can just return an empty database during build
+  if (typeof window === "undefined") return { users: [], budgets: [] };
+
   const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
 
   // If there is data in the database we can use it

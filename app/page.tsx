@@ -17,6 +17,7 @@ import { loginSchema, Login } from "@/schema/loginSchema";
 export default function Root() {
   const { control, handleSubmit } = useForm<Login>({
     resolver: zodResolver(loginSchema),
+    defaultValues: { email: "", password: "" },
   });
 
   const onLogin = (data: Login) => {
