@@ -1,12 +1,9 @@
 import Image from "next/image";
 import styles from "./UsersItem.module.css";
 
-type UsersItemProps = {
-  name: string;
-  joined: Date;
-};
+import { User } from "@/types";
 
-export default function UsersItem({ name, joined }: UsersItemProps) {
+export default function UsersItem({ name, joined }: User) {
   const joinedDate = new Date(joined);
   const joinedString = joinedDate.toLocaleDateString();
 

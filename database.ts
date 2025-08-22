@@ -1,5 +1,3 @@
-"use client";
-
 import { Budget, User } from "@/types";
 
 const LOCAL_STORAGE_KEY = "database";

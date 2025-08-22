@@ -1,22 +1,21 @@
 import Link from "next/link";
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 
-import { InputHTMLAttributes } from "react";
-import { Controller, Control, FieldValues, Path } from "react-hook-form";
+import { Controller, Control, FieldValues, FieldPath } from "react-hook-form";
 
 import styles from "./Input.module.css";
 
-type InputProps<TFieldValues extends FieldValues = FieldValues> = Omit<
+type InputProps<T extends FieldValues = FieldValues> = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "name"
 > & {
   label: string;
   error?: string;
-  name: Path<TFieldValues>;
-  control: Control<TFieldValues>;
+  name: FieldPath<T>;
+  control: Control<T>;
 };
 
-export default function Input<TFieldValues extends FieldValues = FieldValues>({
+export default function Input<T extends FieldValues = FieldValues>({
   type,
   error,
   label,
@@ -24,7 +23,7 @@ export default function Input<TFieldValues extends FieldValues = FieldValues>({
   name,
   control,
   ...rest
-}: InputProps<TFieldValues>) {
+}: InputProps<T>) {
   const inputClassname = `${styles.input} ${className ?? ""}`;
 
   return (
@@ -41,7 +40,6 @@ export default function Input<TFieldValues extends FieldValues = FieldValues>({
               {...rest}
               {...field}
             />
-
             {(error ?? fieldState.error?.message) && (
               <p className={styles.input__error}>
                 {error ?? fieldState.error?.message}

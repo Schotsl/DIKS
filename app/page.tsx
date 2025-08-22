@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 import imageBackground from "@/assets/images/background.png";
@@ -20,6 +18,9 @@ export default function Root() {
   });
 
   const onLogin = (data: Login) => {
+    // Just to demonstrate that the form is working
+    console.log(data);
+
     // Normally I would use a mutation here to login the user in but duo to time constraints I'll just redirect to the dashboard
     redirect("/dashboard");
   };
