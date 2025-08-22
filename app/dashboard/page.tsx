@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+
 import Image from "next/image";
 
 import imageBackground from "@/assets/images/background.png";
@@ -12,8 +14,14 @@ import Modal from "./_components/Modal";
 import Button from "@/components/Button";
 import Budgets from "./_components/Budgets";
 
+import budgetData from "@/queries/budgetData";
+import userData from "@/queries/userData";
+
 export default function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { data: budgets } = useSuspenseQuery(budgetData());
+  const { data: users } = useSuspenseQuery(userData());
 
   return (
     <main className={styles.dashboard}>
@@ -25,37 +33,9 @@ export default function Dashboard() {
         </div>
 
         <div className={styles.dashboard__main__columns}>
-          <Users
-            users={[
-              {
-                id: "1",
-                name: "Scott Wilson",
-                joined: new Date(),
-              },
-              {
-                id: "2",
-                name: "John Doe",
-                joined: new Date(),
-              },
-            ]}
-          />
+          <Users users={users} />
 
-          <Budgets
-            budgets={[
-              {
-                id: "1",
-                amount: 100,
-                start: new Date(),
-                end: new Date(),
-              },
-              {
-                id: "2",
-                amount: 200,
-                start: new Date(),
-                end: new Date(),
-              },
-            ]}
-          />
+          <Budgets budgets={budgets} />
         </div>
 
         <Button

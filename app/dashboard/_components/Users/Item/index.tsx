@@ -7,6 +7,9 @@ type UsersItemProps = {
 };
 
 export default function UsersItem({ name, joined }: UsersItemProps) {
+  const joinedDate = new Date(joined);
+  const joinedString = joinedDate.toLocaleDateString();
+
   return (
     <div className={styles.item}>
       <Image
@@ -18,7 +21,7 @@ export default function UsersItem({ name, joined }: UsersItemProps) {
 
       <div className={styles.item__info}>
         <h3>{name}</h3>
-        <p>Joined {joined.toLocaleDateString()}</p>
+        <p>Joined {joinedString}</p>
       </div>
     </div>
   );
