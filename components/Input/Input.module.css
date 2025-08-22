@@ -1,0 +1,36 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input__label {
+  font-size: 1rem;
+}
+
+.input__input {
+  border: 1px solid #c1c2d0;
+  border-radius: 0.25rem;
+
+  width: 100%;
+  padding: 0.75rem 1rem;
+  outline: none;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.input__link {
+  color: var(--accent);
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
