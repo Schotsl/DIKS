@@ -14,7 +14,9 @@
   left: 50%;
   display: flex;
   position: absolute;
+  z-index: 1;
 
+  cursor: default;
   padding: 2rem;
   transform: translate(-50%, -50%);
   background: var(--background);
