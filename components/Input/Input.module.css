@@ -23,6 +23,11 @@
   background: var(--background);
 }
 
+.input__error {
+  color: var(--error);
+  font-size: 0.875rem;
+}
+
 .input__link {
   color: var(--accent);
 

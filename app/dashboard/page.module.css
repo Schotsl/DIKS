@@ -6,23 +6,23 @@
 .dashboard__image {
   width: 100%;
   height: 100vh;
+
   object-fit: cover;
+  object-position: 64% 50%;
 }
 
 .dashboard__main {
   gap: 2.5rem;
-  min-width: calc(100vw - 420px);
   height: 100vh;
 
+  z-index: 1;
+  min-width: calc(100vw - 420px);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
   flex-direction: column;
-  /* justify-content: center; */
 
   padding: 8rem 4rem;
   display: flex;
   background: var(--background);
-
-  z-index: 1;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .dashboard__main__header__title {
@@ -33,4 +33,9 @@
 .dashboard__main__columns {
   gap: 4rem;
   display: flex;
+}
+
+.dashboard__main__button {
+  max-width: 464px;
+  margin-top: auto;
 }

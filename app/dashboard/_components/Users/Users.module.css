@@ -1,5 +1,6 @@
 .users__list {
   gap: 1rem;
+  width: 200px;
   display: flex;
   flex-direction: column;
 }
