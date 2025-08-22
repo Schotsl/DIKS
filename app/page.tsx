@@ -3,21 +3,21 @@ import Image from "next/image";
 import imageBackground from "@/assets/images/background.png";
 
 import styles from "./page.module.css";
-import Button from "@/components/Button";
-import Input from "@/components/Input";
 
-export default function Home() {
+import Input from "@/components/Input";
+import Button from "@/components/Button";
+
+export default function Root() {
   return (
-    <main className={styles.main}>
-      <nav className={styles.main__nav}>
-        <div className={styles.main__nav__header}>
-          <h1 className={styles.main__nav__header__title}>Login</h1>
-          <p className={styles.main__nav__header__subtitle}>
-            Log in with your Diks account.
-          </p>
+    <main className={styles.root}>
+      <nav className={styles.root__nav}>
+        <div className={styles.root__nav__header}>
+          <h2>Login</h2>
+
+          <h1>Login with your account.</h1>
         </div>
 
-        <div className={styles.main__nav__inputs}>
+        <div className={styles.root__nav__inputs}>
           <Input label="E-mail" placeholder="john@doe.com" />
           <Input label="Password" placeholder="********" type="password" />
         </div>
@@ -27,9 +27,9 @@ export default function Home() {
 
       <Image
         src={imageBackground}
-        alt="Background"
+        alt="A image showing Diks Autoverhuur branded cars"
         sizes="100vw"
-        className={styles.main__image}
+        className={styles.root__image}
       />
     </main>
   );
