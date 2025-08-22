@@ -20,13 +20,13 @@ export function readDatabase(): Database {
         id: "y2025",
         end: "2025-12-31T23:59:59.999Z",
         start: "2025-01-01T00:00:00.000Z",
-        amount: 20000,
+        amount: 200,
       },
       {
         id: "summer",
         end: "2025-08-31T23:59:59.999Z",
         start: "2025-06-01T00:00:00.000Z",
-        amount: 10000,
+        amount: 100,
       },
     ],
     users: [
